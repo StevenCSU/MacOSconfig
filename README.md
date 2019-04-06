@@ -30,55 +30,55 @@
 
   [how to use proxy in brew](https://stackoverflow.com/questions/37231204/osx-proxy-issue-with-homebrew-install)
 
-  1. export ALL_PROXY
+1. export ALL_PROXY
 
-    To run Homebrew or Curl behind a proxy:
+To run Homebrew or Curl behind a proxy:
 
-    `export ALL_PROXY=$http_proxy:port`
+`export ALL_PROXY=$http_proxy:port`
 
-    or
+or
 
-    `export ALL_PROXY=proxyIP:port`
+`export ALL_PROXY=proxyIP:port`
 
-    After this is done, installation worked smoothly.
+After this is done, installation worked smoothly.
 
-    `export ALL_PROXY=socks5://127.0.0.1:1086`
+`export ALL_PROXY=socks5://127.0.0.1:1086`
 
-  2. proxychains
+2. proxychains
 
-    First, install proxychains:
+First, install proxychains:
 
-    `brew install proxychains-ng`
+`brew install proxychains-ng`
 
-    Then, modify the file in the proxychains.
+Then, modify the file in the proxychains.
 
-    For me, it is:
+For me, it is:
 
-    `vim /usr/local/Cellar/proxychains-ng/4.14/.brew/.bot/etc/proxychains.conf`
+`vim /usr/local/Cellar/proxychains-ng/4.14/.brew/.bot/etc/proxychains.conf`
 
-    Change the last line:
+Change the last line:
 
-    `socks5 127.0.0.1 9095`
+`socks5 127.0.0.1 9095`
 
-    to:
+to:
 
-    `socks5 127.0.0.1 8086`
-    > It should be your proxy number.
+`socks5 127.0.0.1 8086`
+> It should be your proxy number.
 
-    Next time, when you run brew command, just do like this:
-    `proxychains4 brew update/install ***`
+Next time, when you run brew command, just do like this:
+`proxychains4 brew update/install ***`
 
-  3. modify the .curlrc(Not work for me, I don't know why)
+3. modify the .curlrc(Not work for me, I don't know why)
 
-    > The homebrew downloads through curl, so this solution is use proxy in curl.
+> The homebrew downloads through curl, so this solution is use proxy in curl.
 
-    `vim ~/.curlrc`
+`vim ~/.curlrc`
 
-    Add one line like this:
+Add one line like this:
 
-    `socks5 = "127.0.0.1:1086"`
+`socks5 = "127.0.0.1:1086"`
 
-    Then you should restart your terminal. Have a try!
+Then you should restart your terminal. Have a try!
 
 ## spaceEmacs config
 
