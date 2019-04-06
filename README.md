@@ -126,3 +126,8 @@ Preference > Package Settings > Package Control > Settings - User:
 }
 
 ```
+
+### Vim
+
+[Is there a difference between 'syntax on' and 'syntax enable' in vimscript?](https://stackoverflow.com/questions/33380451/is-there-a-difference-between-syntax-on-and-syntax-enable-in-vimscript)
+
