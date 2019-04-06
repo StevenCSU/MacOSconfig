@@ -10,7 +10,7 @@
 
   If you git clone something like git.******.git, you are using ssh.
 
-  You have to add ssh keys to you Personal Settings - SSH and GPG keys(just follow github doc.)
+  You have to add ssh keys to you Personal Settings > SSH and GPG keys(just follow github doc.)
 
 2. use https
 
@@ -63,9 +63,11 @@ Change the last line:
 to:
 
 `socks5 127.0.0.1 8086`
+
 > It should be your proxy number.
 
 Next time, when you run brew command, just do like this:
+
 `proxychains4 brew update/install ***`
 
 3. modify the .curlrc(Not work for me, I don't know why)
@@ -87,3 +89,40 @@ Then you should restart your terminal. Have a try!
 `ln -s /usr/local/Cellar/emacs-plus/*/Emacs.app/ /Applications/`
 
 enable org and add org-protile in excluded file
+
+## sublime-text
+
+> brew install sublime-text
+
+[package control](https://packagecontrol.io/installation)
+
+If simple solution can't work, use the manual on the right of the page.
+
+While install package, something goes wrong with it.
+
+So we need a proxy.
+
+[Use from Behind a Proxy](https://geteng.xyz/sublime-text.html)
+
+Preference > Package Settings > Package Control > Settings - User:
+
+```json
+{
+	"bootstrapped": true,
+	"channels":
+	[
+		"https://packagecontrol.io/channel_v3.json",
+		"https://web.archive.org/web/20190316015227/https://bitbucket.org/jjones028/p4sublime/raw/tip/packages.json"
+	],
+	"http": "127.0.0.1:1087",
+	"https_proxy": "127.0.0.1:1087",
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Package Control",
+	]
+}
+
+```
