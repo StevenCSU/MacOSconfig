@@ -82,6 +82,12 @@ Add one line like this:
 
 Then you should restart your terminal. Have a try!
 
+## formula
+
+## cask
+
+`shadowsocks-ng`
+
 ## spaceEmacs config
 
 [linkapps can't work](https://github.com/syl20bnr/spacemacs/issues/10578)
