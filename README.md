@@ -22,6 +22,10 @@
 
   [You need to generate a token.](https://stackoverflow.com/questions/17659206/git-push-results-in-authentication-failed)
 
+### gpg
+
+`Use gpg to commit`
+
 ## Homebrew
 
 ### brew update太慢
