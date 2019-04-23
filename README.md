@@ -137,3 +137,12 @@ Preference > Package Settings > Package Control > Settings - User:
 
 [Is there a difference between 'syntax on' and 'syntax enable' in vimscript?](https://stackoverflow.com/questions/33380451/is-there-a-difference-between-syntax-on-and-syntax-enable-in-vimscript)
 
+## bash
+
+`command not found: compdef`
+
+```shell
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+```
