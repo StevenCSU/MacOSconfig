@@ -122,7 +122,6 @@ Preference > Package Settings > Package Control > Settings - User:
 	"channels":
 	[
 		"https://packagecontrol.io/channel_v3.json",
-		"https://web.archive.org/web/20190316015227/https://bitbucket.org/jjones028/p4sublime/raw/tip/packages.json"
 	],
 	"http": "127.0.0.1:1087",
 	"https_proxy": "127.0.0.1:1087",
