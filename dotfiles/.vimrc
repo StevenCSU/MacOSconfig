@@ -1,6 +1,9 @@
 " Use the Solarized Dark theme
 set background=dark
 colorscheme molokai
+"let g:solarized_termcolors=256
+"colorscheme solarized
+"let g:solarized_termtrans=1
 
 " Personal Change
 filetype plugin indent on	" Enable file type based on indentation
