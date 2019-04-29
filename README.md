@@ -152,3 +152,14 @@ export NVM_DIR="$HOME/.nvm"
 
 
 ### neovim
+
+
+### Go
+
+#### GoGetProxyConfig
+
+Setting proxies for source code used by `go get`
+
+git
+
+`git config [--global] http.proxy http://proxy.example.com:port`
