@@ -3,10 +3,10 @@
 	name = StevenCSU
 
 [http "https://github.com"]
-	proxy = socks5://127.0.0.1:1086
+	proxy = http://127.0.0.1:1087
 
 [https "https://github.com"]
-	proxy = socks5://127.0.0.1:1086
+	proxy = http://127.0.0.1:1087
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -203,3 +203,5 @@
 	insteadOf = "gist:"
 [gpg]
 	program = gpg
+[http]
+	proxy = http://127.0.0.1:1087

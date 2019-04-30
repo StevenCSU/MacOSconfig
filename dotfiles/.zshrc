@@ -3,14 +3,18 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/zhangyin/.oh-my-zsh"
-export PATH="$PATH:/Users/zhangyin/anaconda3/bin:/usr/bin:/bin:/usr/sbin"
+export PATH="/Users/zhangyin/anaconda3/bin:$PATH"
+export PATH="$PATH:/usr/bin:/bin:/usr/sbin"
 export PATH="/usr/local/sbin:$PATH"
+#export GOPATH=$HOME/go
+#export PATH=$PATH:$GOPATH/bin
 export EDITOR='vim'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="spaceship"
 ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
@@ -94,6 +98,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="vi ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vi="nvim"
+alias bubu="brew update && brew upgrade && brew outdated && brew cleanup"
 # Get week number
 alias week='date +%V'
 
@@ -127,3 +133,5 @@ source ~/.bin/tmuxinator.zsh
 export PATH="$PATH:$HOME/.rvm/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

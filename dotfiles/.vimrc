@@ -1,9 +1,8 @@
 " Use the Solarized Dark theme
 set background=dark
-colorscheme molokai
+"colorscheme molokai
 "let g:solarized_termcolors=256
-"colorscheme solarized
-"let g:solarized_termtrans=1
+colorscheme gruvbox
 
 " Personal Change
 filetype plugin indent on	" Enable file type based on indentation
@@ -14,11 +13,24 @@ set shiftwidth=4			" Number of spaces to use for autoindent
 call plug#begin()
 
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-vinegar'
+"Plug 'tpope/vim-vinegar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
-Plug 'easymotion/vim-easymotion'
+"Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'fatih/vim-go'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+Plug 'flazz/vim-colorschemes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+"Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
 
@@ -92,6 +104,23 @@ set showmode
 set title
 " Show the (partial) command as it’s being typed
 set showcmd
+
+" airline mode
+"let g:airline#extensions#tabline#enabled = 1
+
+" deoplete configuration
+let g:deoplete#enable_at_startup = 1
+
+" true color setting
+if has("termguicolors")
+    " fix bug for vim
+    set t_8f=[38;2;%lu;%lu;%lum
+    set t_8b=[48;2;%lu;%lu;%lum
+
+    " enable true color
+    set termguicolors
+endif
+
 " Use relative line numbers
 if exists("&relativenumber")
 	set relativenumber
