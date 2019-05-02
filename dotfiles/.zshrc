@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/zhangyin/.oh-my-zsh"
-export PATH="/Users/zhangyin/anaconda3/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
 export PATH="$PATH:/usr/bin:/bin:/usr/sbin"
 export PATH="/usr/local/sbin:$PATH"
 #export GOPATH=$HOME/go
@@ -100,6 +100,11 @@ alias zshconfig="vi ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi="nvim"
 alias bubu="brew update && brew upgrade && brew outdated && brew cleanup"
+alias nvimconfig="vi $HOME/.config/nvim/init.vim"
+alias cux="chmod u+x"
+
+# check vim startup time
+alias vimtime="vim --startuptime /tmp/startup.log +q && vim /tmp/startup.log"
 # Get week number
 alias week='date +%V'
 
@@ -113,15 +118,13 @@ alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Ch
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
-alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 
 # nvm config
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # thefuck config
 eval $(thefuck --alias)
