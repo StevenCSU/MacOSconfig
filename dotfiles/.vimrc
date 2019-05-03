@@ -15,6 +15,7 @@ packadd! matchit
 filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
 
+set history=200
 set autoindent             " Indent according to previous line.
 set expandtab              " Use spaces instead of tabs.
 set softtabstop =4         " Tab key indents by 4 spaces.
@@ -68,4 +69,3 @@ set viminfo     ='100,n$HOME/.vim/files/info/viminfo
 "	set relativenumber
 "	au BufReadPost * set relativenumber
 "endif
-
